@@ -64,7 +64,7 @@ async fn main(#[shuttle_shared_db::Postgres] pool: PgPool) -> shuttle_axum::Shut
     let state = MyState { pool };
     let router = Router::new()
         .route("/books", get(list))
-        .route("/books", post(add))
+        // .route("/books", post(add))
         .route("/books/:id", get(retrieve))
         .with_state(state);
 
